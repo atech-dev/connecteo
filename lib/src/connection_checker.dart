@@ -72,6 +72,7 @@ class ConnectionChecker {
     String? baseUrlLookupAddress,
     Duration? requestInterval,
     int? failureAttempts,
+    HostReachabilityChecker? hostReachabilityChecker,
   }) {
     return ConnectionChecker._(
       checkAddresses: checkAddresses,
@@ -81,6 +82,7 @@ class ConnectionChecker {
       checkHostReachability: checkHostReachability,
       failureAttempts: failureAttempts,
       requestInterval: requestInterval,
+      hostReachabilityChecker: hostReachabilityChecker,
     );
   }
 
