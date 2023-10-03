@@ -263,7 +263,7 @@ class ConnectionChecker {
   Future<bool> get _hostReachable async {
     final hostReachable = _checkHostReachability
         ? await _hostReachabilityChecker.canReachAnyHost(
-            internetAddresses: kIsWeb ? _checkApiUrls : _checkAddresses,
+            internetAddresses: _checkApiUrls ?? _checkAddresses,
             timeout: _checkOverDnsTimeout,
           )
         : true;
