@@ -133,7 +133,15 @@ class WebHostReachabilityChecker implements HostReachabilityChecker {
   }) async {
     try {
       final uri = Uri.parse(address.host);
-      final result = await http.get(uri);
+      final result = await http.get(uri).timeout(
+        timeout,
+        onTimeout: () {
+          return http.Response(
+            '',
+            408,
+          );
+        },
+      );
       if (result.statusCode == 200) return true;
       return false;
     } catch (_) {
