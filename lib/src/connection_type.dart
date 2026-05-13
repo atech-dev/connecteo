@@ -2,6 +2,7 @@
 /// information which help us to asses how we should treat the connection type.
 enum ConnectionType {
   bluetooth(true),
+  satellite(true),
   wifi(true),
   ethernet(true),
   mobile(true),

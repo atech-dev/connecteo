@@ -26,6 +26,8 @@ class ConnectionTypeMapper
         return ConnectionType.wifi;
       case ConnectivityResult.other:
         return ConnectionType.other;
+      case ConnectivityResult.satellite:
+        return ConnectionType.satellite;
       case ConnectivityResult.none:
         return ConnectionType.none;
     }
